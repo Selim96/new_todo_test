@@ -8,7 +8,7 @@ const Filter: React.FC = () => {
     
   const dispatch = useAppDispatch()
   
-  const allTodos = useAppSelector(allSelectors.getAllTodos)
+  const allTodos = useAppSelector(allSelectors.getAllTodos).filter(item=>!item.isDeleted)
   const status = useAppSelector(allSelectors.getStatus)
   const countAll = allTodos.length
   let countCompleted = 0
