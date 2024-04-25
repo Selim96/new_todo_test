@@ -11,13 +11,13 @@ interface IProp {
 }
 
 const TodoItem: React.FC<IProp> = memo(({todo}) => {
-  console.log('todo render')
 
   const {id, title, status, isDeleted} = todo
   const dispatch = useAppDispatch()
 
   const deleteTodoClick = (e: React.MouseEvent<HTMLElement>):void => {
     dispatch(deleteTodo(id))
+    e.stopPropagation();
   }
 
   const deleteFullyClick = (e: React.MouseEvent<HTMLElement>):void => {
@@ -25,7 +25,8 @@ const TodoItem: React.FC<IProp> = memo(({todo}) => {
   }
 
   const changeStatus = (e: React.MouseEvent<HTMLElement>): void => {
-    if(e.currentTarget !== e.target) return
+    // if(e.currentTarget !== e.target) return
+    // if (e.target.tagName !== "BUTTON")
     dispatch(changeTodoStatus(id))
   }
 

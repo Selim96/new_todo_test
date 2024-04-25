@@ -14,13 +14,10 @@ const DeletedTodos: React.FC = () => {
             <Container>
                 <h1 className={s.title}>Deleted Todos</h1>
                 
-                {!!allTodos.length && 
+                {!!allTodos.length ?
                 <ul className={s.todoList}>
-                    {allTodos.map((item) => {
-                        if(item) return <TodoItem key={item.id} todo={item}/>
-                    }
-                    )}
-                </ul> 
+                    {allTodos.map((item) => <TodoItem key={item.id} todo={item}/>)}
+                </ul> : <p className={s.propouse}>There's nothing here </p>
                 }
             </Container>
         </div>

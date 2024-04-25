@@ -2,7 +2,6 @@ import { createSlice, PayloadAction  } from "@reduxjs/toolkit"
 import { toast } from "react-toastify"
 import  {IState, ITodo} from "../interfaces/interfaces"
 
-
 const initialState: IState = {
   allTodos: [],
   filterStatus: null,
