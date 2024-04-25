@@ -33,7 +33,6 @@
   },
   "eslintConfig": {
     "extends": [
-      "@wemake-services/typescript/base",
       "react-app",
       "react-app/jest"
     ]
@@ -51,6 +50,5 @@
     ]
   },
   "devDependencies": {
-    "@wemake-services/eslint-config-typescript": "^3.1.1"
   }
 }
